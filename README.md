@@ -17,10 +17,10 @@ Follow these steps to get the HeyMemoBackend up and running on your local machin
 1. **Clone the repository**:
    git clone [URL_OF_YOUR_REPO]
 
-2. **Clone the repository**:
+2. **Go to folder**:
 
 ```bash
-    cd HeyMemoBackend
+    cd memo-backend
 ```
 
 3. **Install Dependencies using Composer:**
