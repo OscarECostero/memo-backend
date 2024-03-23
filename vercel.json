@@ -8,8 +8,12 @@
     ],
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/(.*\\.php)",
         "dest": "public/index.php"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "public/$1"
       }
     ]
   }
