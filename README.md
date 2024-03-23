@@ -52,7 +52,7 @@ Follow these steps to get the HeyMemoBackend up and running on your local machin
 6. **Using Docker:**
 
 ```bash
-    docker-compose up
+    ./vendor/bin/sail up
 ```
 
 7. **Run Migrations:**
