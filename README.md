@@ -66,5 +66,17 @@ Follow these steps to get the HeyMemoBackend up and running on your local machin
     php artisan db:seed --class=MemoTestSeeder
 ```
 
+9. **If you have a laravel error on localhost:8000 run:**
+
+```bash
+    php artisan key:generate
+```
+
+9. **To run test:**
+
+```bash
+    php artisan test
+```
+
 ## Visit [localhost:8000/graphiql](http://localhost:8000/graphiql) to explore the available queries and mutations.
 
