@@ -1,0 +1,55 @@
+type Query {
+  getAllMemotests: [MemoTest!]!
+  memotest(id: ID! @eq): MemoTest @find
+}
+
+type Mutation {
+  createMemoTest(input: CreateMemoTestInput!): MemoTest!
+  deleteMemoTest(id: ID!): Boolean!
+  addImageToMemoTest(memoTestId: ID!, imageUrl: String!): MemoTest!
+  removeImageFromMemoTest(memoTestId: ID!, imageId: ID!): MemoTest!
+  createGameSession(input: CreateGameSessionInput!): GameSession!
+  endGameSession(id: ID!): GameSession!
+  incrementGameSessionRetries(id: ID!): GameSession!
+}
+
+input CreateMemoTestInput {
+    name: String!
+    imageUrls: [String!]!
+}
+
+type Image {
+  id: ID!
+  memo_test_id: ID!
+  url: String!
+}
+
+type MemoTest {
+  id: ID!
+  name: String!
+  score: Int
+  images: [Image!]! @hasMany
+  gameSession: GameSession
+}
+
+type GameSession {
+    id: ID!
+    memo_test_id: ID!
+    retries: Int!
+    number_of_pairs: Int!
+    state: GameState!
+    score: Int
+}
+
+input CreateGameSessionInput {
+    memo_test_id: ID!
+    retries: Int
+    numberOfPairs: Int!
+    state: GameState
+}
+
+enum GameState {
+    Started
+    Completed
+}
+
